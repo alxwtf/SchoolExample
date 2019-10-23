@@ -22,7 +22,7 @@ class Numbers
 
     public void Multiply()
     {
-        Console.WriteLine($"Ответ: {firstNumber * secondNumber}");
+        Console.WriteLine($"{firstNumber}*{secondNumber}\nОтвет: {firstNumber * secondNumber}");
     }
     public float Divide()
     {
@@ -33,7 +33,7 @@ class Numbers
             float.TryParse(Console.ReadLine(),out temp);
             secondNumber=temp;
         }
-        Console.WriteLine($"Ответ: {firstNumber / secondNumber}");
+        Console.WriteLine($"{firstNumber}/{secondNumber}\nОтвет: {firstNumber / secondNumber}");
         return secondNumber;
     }
 }
