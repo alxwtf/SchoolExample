@@ -4,36 +4,44 @@ class Numbers
 {
     public float firstNumber { get; set; }
     public float secondNumber { get; set; }
+    public float result { get; set; }
 
     public Numbers(float a, float b)
     {
         firstNumber = a;
         secondNumber = b;
     }
-    public void Add()
+    public float Add()
     {
-        Console.WriteLine($"{firstNumber}+{secondNumber}\nОтвет: {firstNumber + secondNumber}");
+        result=firstNumber+secondNumber;
+        Console.WriteLine($"{firstNumber}+{secondNumber}\nОтвет: {result}");
+        return result;
     }
 
-    public void Substract()
+    public float Substract()
     {
-        Console.WriteLine($"{firstNumber}-{secondNumber}\nОтвет: {firstNumber - secondNumber}");
+        result=firstNumber-secondNumber;
+        Console.WriteLine($"{firstNumber}-{secondNumber}\nОтвет: {result}");
+        return result;
     }
 
-    public void Multiply()
+    public float Multiply()
     {
-        Console.WriteLine($"{firstNumber}*{secondNumber}\nОтвет: {firstNumber * secondNumber}");
+        result=firstNumber*secondNumber;
+        Console.WriteLine($"{firstNumber}*{secondNumber}\nОтвет: {result}");
+        return result;
     }
-    public float Divide()
+    public (float secondNum,float res) Divide()
     {
         float temp;
-        while (secondNumber==0)
+        
+        while (secondNumber == 0)
         {
             Console.WriteLine($"Деление на ноль, введите другое число");
-            float.TryParse(Console.ReadLine(),out temp);
-            secondNumber=temp;
+            float.TryParse(Console.ReadLine(), out temp);
+            secondNumber = temp;
         }
-        Console.WriteLine($"{firstNumber}/{secondNumber}\nОтвет: {firstNumber / secondNumber}");
-        return secondNumber;
+        result=firstNumber/secondNumber;
+        return (secondNum:secondNumber,res:result);
     }
 }
