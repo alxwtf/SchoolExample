@@ -14,21 +14,21 @@ class Numbers
     public float Add()
     {
         result=firstNumber+secondNumber;
-        Console.WriteLine($"{firstNumber}+{secondNumber}\nОтвет: {result}");
+        Console.WriteLine($"{firstNumber} + {secondNumber} = {result}");
         return result;
     }
 
     public float Substract()
     {
         result=firstNumber-secondNumber;
-        Console.WriteLine($"{firstNumber}-{secondNumber}\nОтвет: {result}");
+        Console.WriteLine($"{firstNumber} - {secondNumber} = {result}");
         return result;
     }
 
     public float Multiply()
     {
         result=firstNumber*secondNumber;
-        Console.WriteLine($"{firstNumber}*{secondNumber}\nОтвет: {result}");
+        Console.WriteLine($"{firstNumber} * {secondNumber} = {result}");
         return result;
     }
     public (float secondNum,float res) Divide()
