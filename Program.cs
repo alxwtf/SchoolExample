@@ -58,31 +58,7 @@ namespace SchoolExample
                         break;
                     }
             }
-            Submenu(a, b, story, count, rslt);
-        }
-
-        static float Input()
-        {
-            float a;
-            Console.WriteLine("Введите число");
-            while (!float.TryParse(Console.ReadLine(), out a))
-            {
-                Console.WriteLine("Некорректный ввод, введите число");
-            }
-            return a;
-        }
-
-        static void History(string[] story, int count)
-        {
-            for (var i = 0; i < count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {story[i]}");
-            }
-            Console.WriteLine($"\n");
-        }
-        static void Submenu(float a, float b, string[] story, int count, float rslt)
-        {
-            Console.WriteLine("Выберите дальнейшее действие");
+            menu:Console.WriteLine("Выберите дальнейшее действие");
             Console.WriteLine("1: Ввести новые числа\n2: Выбрать другое действие с числами");
             Console.WriteLine("3: Произвести вычисление над ответом(ответ первое число)\n4: Произвести вычисление над ответом(ответ второе число)");
             Console.WriteLine("5: Показать историю вычислений\n6: Выход");
@@ -116,11 +92,30 @@ namespace SchoolExample
                 case 5:
                     {
                         History(story, count);
-                        Submenu(a, b, story, count, rslt);
-                        break;
+                        goto menu;
                     }
                 default: {Console.WriteLine("Спасибо за использование"); break;}
             }
+        }
+
+        static float Input()
+        {
+            float a;
+            Console.WriteLine("Введите число");
+            while (!float.TryParse(Console.ReadLine(), out a))
+            {
+                Console.WriteLine("Некорректный ввод, введите число");
+            }
+            return a;
+        }
+
+        static void History(string[] story, int count)
+        {
+            for (var i = 0; i < count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {story[i]}");
+            }
+            Console.WriteLine($"\n");
         }
     }
 }
